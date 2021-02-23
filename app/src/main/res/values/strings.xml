@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">FinalNews</string>
+    <string name="facebook_application_id" translatable="false">458439395325794</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb458439395325794</string>
+    <string name="selected_label">0 selected</string>
+    <string name="clear_all_label">Clear All</string>
+    <string name="done_label">Done</string>
+    <string name="publishers_label">Publishers</string>
+    <string name="countries_label">Countries</string>
+    <string name="categories_label">Categories</string>
+    <string name="Admob_ID">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="AdUnit_ID">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="users_label">users</string>
+    <string name="sources_label">sources</string>
+    <string name="settings_label">settings</string>
+    <string name="widgetKey_top_headlines">topHeadlineskey</string>
+    <string name="pref_fontSize_key">pref_fontSize</string>
+    <string name="theme_key">pref_theme</string>
+    <string name="menu_medium_label">Medium</string>
+    <string name="lightLabel">Light</string>
+    <string name="terms_of_service">https://newsapi.org/terms</string>
+    <string name="privacy_policy">https://newsapi.org/privacy</string>
+    <string name="publisher_icon">Publisher Icon</string>
+    <string name="no_of_cols">3</string>
+    <string name="categories_icon">Categories Icon</string>
+    <string name="countries_icon">Country Icon</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="error_message">Try Again</string>
+    <string name="theme_default">Dark</string>
+    <string name="darkLabel">Dark</string>
+    <string name="logout_action">com.package.ACTION_LOGOUT</string>
+    <string name="status_key">status</string>
+    <string name="error_label">error</string>
+    <string name="code_key">code</string>
+    <string name="message_key">message</string>
+    <string name="ok_confirm">OK</string>
+    <string name="fontSize_default">Medium</string>
+    <string name="article_image">Article Image</string>
+    <string name="bookmark_icon">Bookmark Icon</string>
+    <string name="share_icon">Share Icon</string>
+    <string name="name_jsonkey">name</string>
+    <string name="id_jsonkey">id</string>
+    <string name="source_jsonkey">source</string>
+    <string name="send_to">Share</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_settings">Settings</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_text_cat_key">textKey</string>
+    <string name="settings_text_title">Text</string>
+    <string name="themes_label_key">themeskey</string>
+    <string name="themes_label">Background</string>
+    <string name="account_label_key">accountKey</string>
+    <string name="account_label">Account</string>
+    <string name="widget_label">Widgets</string>
+    <string name="widget_top_headlines_key">pref_widget_top_headlines</string>
+    <string name="menu_fontSize_label">Font Size</string>
+    <string name="fontSize_summary">Font size of article descriptions</string>
+    <string name="theme_summary">Light or Dark Background</string>
+    <string name="top_headlines_widget_label">Top Headlines</string>
+    <string name="choose_country">Choose Country</string>
+    <string name="top_headlines_summary">Choose country to display top headlines</string>
+    <string name="themeLabel">Theme </string>
+    <string name="bookmarks_label">Bookmarks</string>
+    <string name="bookmarked_articles">Bookmarked Articles</string>
+
+</resources>

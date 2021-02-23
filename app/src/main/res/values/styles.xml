@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="LightTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorControlNormal">@color/white</item>
+    </style>
+
+    <!--The colorControlNormal is to make sure the up arrow is always white regardless of theme -->
+
+    <style name="DarkTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="FirebaseLoginTheme" parent="FirebaseUI">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="ToolBarStyle" >
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">?android:attr/actionBarSize</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:elevation">@dimen/toolbar_elevation</item>
+    </style>
+
+</resources>
