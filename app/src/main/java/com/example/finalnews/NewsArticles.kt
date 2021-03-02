@@ -278,7 +278,7 @@ class NewsArticles : AppCompatActivity(),LoaderManager.LoaderCallbacks<ArrayList
                 val builder = AlertDialog.Builder(this)
                 builder.setMessage(errorMessage)
                     .setTitle(errorTitle)
-                    .setPositiveButton(R.string.ok_confirm) { dialogInterface, a -> dialogInterface.dismiss() }
+                    .setPositiveButton(R.string.ok_confirm) { dialogInterface, _ -> dialogInterface.dismiss() }
                 builder.show()
                 break
             }

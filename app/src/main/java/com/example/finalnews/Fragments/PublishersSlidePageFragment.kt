@@ -69,7 +69,7 @@ class PublishersSlidePageFragment : Fragment() {
             holder.mPublisherImageView.setImageResource(mThumbIds[position])
             holder.mPublisherTextView.text = mPublishers[position]
             holder.bind(mPublishers[position], listener, position)
-            if (mSourcesInfo?.mPublishersSelected?.contains(mPublishers.get(position))!!) {
+            if (mSourcesInfo?.mPublishersSelected?.contains(mPublishers[position])!!) {
                 //source has been selected
                 holder.mPublisherConstraintLayout.setBackgroundColor(resources.getColor(R.color.colorPrimaryDark))
             } else {

@@ -118,6 +118,7 @@ class MainActivity : AppCompatActivity(),PublishersSlidePageFragment.OnItemClick
                                 val countriesSelected = ArrayList<String>()
                                 mFirebaseSourcesInfo = SourcesInfo(publishersSelected,categoriesSelected,countriesSelected)
                             }
+                            updateNoOfItemsSelected()
                             updateUI(savedInstanceState, mFirebaseSourcesInfo)
                         }
                         override fun onCancelled(error: DatabaseError) {}
@@ -163,7 +164,6 @@ class MainActivity : AppCompatActivity(),PublishersSlidePageFragment.OnItemClick
         }
         clear_all_label.setOnClickListener { clear_all_label() }
         done_label.setOnClickListener { done_label() }
-
     }
 
     private fun updateUI(savedInstanceState: Bundle?,mFirebaseSourcesInfo: SourcesInfo?){

@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.RecyclerView
@@ -35,10 +36,23 @@ class NewsArticlesAdapter(private val listener:OnArticleClickListener, private v
     private lateinit var listOfArticles:ArrayList<ArticleItem>
     private lateinit var sharedPreferences:SharedPreferences
     private var fontSize:Float = 0f
+    private var bookmarkedArticles:ArrayList<ArticleItem> = ArrayList()
 
     init {
     makeListOfArticles()
     setUpSharedPreferences()
+    setUpViewModel()
+    }
+
+    private fun setUpViewModel() {
+        Log.i("viewModel",NewsArticlesAdapter::class.java.simpleName)
+        bookmarksViewModel.getBookmarks()?.observe(context as LifecycleOwner,
+            Observer<ArrayList<ArticleItem>> {
+                bookmarkedArticles.clear()
+                for(i in 0 until it.size)
+                    bookmarkedArticles.add(it[i])
+                notifyDataSetChanged()
+            })
     }
 
     interface OnArticleClickListener {
@@ -125,23 +139,19 @@ class NewsArticlesAdapter(private val listener:OnArticleClickListener, private v
         holder.mArticleTitleTextView.text = listOfArticles[position].title
         holder.mArticleDescTextView.text = listOfArticles[position].description
         holder.mArticlePublishedTextView.text = formattedDate
-        bookmarksViewModel.getBookmarks()?.observe(context as LifecycleOwner,
-            Observer<ArrayList<ArticleItem>> {
-                Log.i(it.size.toString(),NewsArticlesAdapter::class.java.simpleName)
-                if(it.contains(listOfArticles[position])){
-                    if (holder.theme.equals(context.resources.getString(R.string.darkLabel))){
-                        holder.mBookmarkImageView.setImageDrawable(context.resources.getDrawable(R.drawable.baseline_bookmark_white_18dp))
-                    }else{
-                        holder.mBookmarkImageView.setImageDrawable(context.resources.getDrawable(R.drawable.baseline_bookmark_black_18dp))
-                    }
-                }else{
-                    if(holder.theme.equals(context.resources.getString(R.string.darkLabel))){
-                        holder.mBookmarkImageView.setImageDrawable(context.resources.getDrawable(R.drawable.baseline_bookmark_border_white_18dp))
-                    }else {
-                        holder.mBookmarkImageView.setImageDrawable(context.resources.getDrawable(R.drawable.baseline_bookmark_border_black_18dp))
-                    }
-                }
-            })
+        if(bookmarkedArticles.contains(listOfArticles[position])){
+            if (holder.theme.equals(context.resources.getString(R.string.darkLabel))){
+                holder.mBookmarkImageView.setImageDrawable(context.resources.getDrawable(R.drawable.baseline_bookmark_white_18dp))
+            }else{
+                holder.mBookmarkImageView.setImageDrawable(context.resources.getDrawable(R.drawable.baseline_bookmark_black_18dp))
+            }
+        }else{
+            if(holder.theme.equals(context.resources.getString(R.string.darkLabel))){
+                holder.mBookmarkImageView.setImageDrawable(context.resources.getDrawable(R.drawable.baseline_bookmark_border_white_18dp))
+            }else {
+                holder.mBookmarkImageView.setImageDrawable(context.resources.getDrawable(R.drawable.baseline_bookmark_border_black_18dp))
+            }
+        }
     }
 
     override fun getItemCount(): Int {
